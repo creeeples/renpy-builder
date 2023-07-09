@@ -72,10 +72,16 @@ jobs:
         
     - name: Build VN project
       id: build_project
-      uses: creeeples/renpy-builder@v1.0.0
+      runs:
+        using: 'docker'
+        image: 'Dockerfile'
+        args:
+          - ${{ inputs.sdk-version }}
+          - ${{ inputs.project-dir }}
+          - ${{ inputs.package }}
       with:
-        sdk-version: '8.1.1'
-        project-dir: './game/'
+        sdk-version: inputs.sdk-version
+        project-dir: inputs.project
       env:
         SDL_AUDIODRIVER: dummy
         SDL_VIDEODRIVER: dummy
