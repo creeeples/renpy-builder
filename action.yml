@@ -5,6 +5,9 @@ branding:
   color: 'gray-dark'
   icon: 'archive'
 inputs:
+  GITHUB_REF:
+    description: "Generated GH Token"
+    required: true
   sdk-version:
     description: "The version of the Ren'Py SDK to use"
     required: true
