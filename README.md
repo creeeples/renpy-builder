@@ -4,5 +4,3 @@ The action in this repository is a strict dependency of the Ren'Py Auto-Builder,
 
 ## Usage
 No setup required from the user end! Feel free to fork the repository or open a pull-request if you believe there is a fix needed.
-
-**Required Parameters:**
