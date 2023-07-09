@@ -7,11 +7,11 @@ inputs:
     required: true
     default: '8.1.1'
   project-dir:
-    description: "The path to the directory where the project exists"
+    description: "The directory that houses the Ren'Py game files. Typically found at ./game/"
     required: true
     default: '.'
   package:
-    description: "Specific package to build for"
+    description: "Package types that you would like to build for. Currently supports all versions supported in v8.1.1 of RenPy"
     required: false
     type: choice
     options:
@@ -19,7 +19,6 @@ inputs:
       - mac
       - linux
       - market
-      - web
       - android
 outputs:
   out_dir:
@@ -33,6 +32,4 @@ runs:
     - ${{ inputs.sdk-version }}
     - ${{ inputs.project-dir }}
     - ${{ inputs.package }}
-branding:
-  color: 'gray-dark'
-  icon: 'archive'
+
