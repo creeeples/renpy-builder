@@ -42,8 +42,6 @@ jobs:
           echo "old GITHUB_REF is $GITHUB_REF"
           GITHUB_REF=$(echo $GITHUB_REF | sed -e "s#refs/heads/release/##g")
           echo "::set-output name=ref::$GITHUB_REF"
-      env:
-        GITHUB_REF: ${{ github.ref }}
 
     - name: Format release name
       id: format_release_name
@@ -69,8 +67,8 @@ jobs:
           - ${{ inputs.project-dir }}
           - ${{ inputs.package }}
       with:
-        sdk-version: inputs.sdk-version
-        project-dir: inputs.project
+        sdk-version: ${{ inputs.sdk-version }}
+        project-dir: ${{ inputs.project-dir }}
       env:
         SDL_AUDIODRIVER: dummy
         SDL_VIDEODRIVER: dummy
