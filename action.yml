@@ -45,16 +45,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Testing
+    - name: Extract version from branch name
+      id: extract_version
       run: |
           echo "old GITHUB_REF is $GITHUB_REF"
-
-    # - name: Extract version from branch name
-    #   id: extract_version
-    #   run: |
-    #       echo "old GITHUB_REF is $GITHUB_REF"
-    #       GITHUB_REF=$(echo $GITHUB_REF | sed -e "s#refs/heads/release/##g")
-    #       echo "::set-output name=ref::$GITHUB_REF"
+          GITHUB_REF=$(echo $GITHUB_REF | sed -e "s#refs/heads/release/##g")
+          echo "::set-output name=ref::$GITHUB_REF"
 
     # - name: Format release name
     #   id: format_release_name
