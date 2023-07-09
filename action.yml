@@ -32,6 +32,6 @@ runs:
     - ${{ inputs.sdk-version }}
     - ${{ inputs.project-dir }}
     - ${{ inputs.package }}
-  branding:
-    color: 'blue'
-    icon: 'box'
+branding:
+  color: 'blue'
+  icon: 'box'
