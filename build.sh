@@ -11,13 +11,6 @@ tar -xf ./${sdk_name}.tar.bz2
 rm ./${sdk_name}.tar.bz2
 mv ./${sdk_name} ../renpy
 
-# Download and install Ren'Py Android Packaging Tool (RAPT)
-echo "Downloading Ren'Py Android Packaging Tool (RAPT)..."
-wget -q https://www.renpy.org/dl/$1/renpy-$1-sdk-rapt.tar.bz2
-echo "Installing Ren'Py Android Packaging Tool (RAPT)..."
-tar -xf ./renpy-$1-sdk-rapt.tar.bz2 -C ../renpy/
-rm ./renpy-$1-sdk-rapt.tar.bz2
-
 case $3 in
     pc|mac|linux|market|web|android)
         COMMAND="../renpy/renpy.sh ../renpy/launcher distribute --package $3 $2"
