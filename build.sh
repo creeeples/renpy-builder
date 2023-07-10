@@ -26,7 +26,7 @@ fi
 
 case $3 in
     pc|mac|linux|market|web|android)
-        COMMAND="../renpy/renpy.sh ../renpy/launcher distribute --package $3 $2"
+        COMMAND="../renpy/renpy.sh ../renpy/launcher distribute $2"
         ;;
     *)
         COMMAND="../renpy/renpy.sh ../renpy/launcher distribute $2"
